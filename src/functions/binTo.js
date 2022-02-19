@@ -2,7 +2,7 @@ function BinEntToDec(bin){
     let result = 0 ;
     let pos = bin.length -1
     for (let i in bin){
-        if (bin[i] == '1'){
+        if (bin[i] === '1'){
             result += Math.pow(2,pos)
         }
         pos = pos - 1
@@ -16,7 +16,7 @@ function BinFraccToDec(bin){
     let pos = 1;
     let str = '' 
     for (let i in bin){
-        if (bin[i] == '1'){
+        if (bin[i] === '1'){
             result += Math.pow(2, -pos);
             str +=(`2^-${pos} +`)
         }
@@ -34,7 +34,7 @@ function Ex2 (bin){
 
 function Ca1(bin) {
     let result = ''
-    if (bin[0] == '1'){
+    if (bin[0] === '1'){
         for (let i in bin){
             if (bin[i] === '1'){
                 result += '0' 
@@ -51,7 +51,7 @@ function Ca1(bin) {
 }
 
 function Ca2(bin){
-    if (bin[0] == '1'){
+    if (bin[0] === '1'){
         return Ca1(bin) - 1
     }else{
         return BinEntToDec(bin)
@@ -83,6 +83,8 @@ switch (system.toLocaleLowerCase()) {
         break;
     case 'integer':
         result =(BinEntToDec(binary))
+        break;
+    default:
         break;
 }
     return result
